@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180918 22:44:12.648" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="C:\myrobot\test\testrobot.robot" id="s1" name="Testrobot">
+<test id="s1-t1" name="My test case 1 -">
+<kw name="Create Directory" library="OperatingSystem">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>viv1folder</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.728" html="yes" level="INFO">Directory '&lt;a href="file://C:\myrobot\test\viv1folder"&gt;C:\myrobot\test\viv1folder&lt;/a&gt;' already exists.</msg>
+<status status="PASS" endtime="20180918 22:44:12.728" starttime="20180918 22:44:12.727"></status>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>viv2test.txt</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.730" html="yes" level="INFO">Created file '&lt;a href="file://C:\myrobot\test\viv2test.txt"&gt;C:\myrobot\test\viv2test.txt&lt;/a&gt;'.</msg>
+<status status="PASS" endtime="20180918 22:44:12.730" starttime="20180918 22:44:12.728"></status>
+</kw>
+<kw name="Move File" library="OperatingSystem">
+<doc>Moves the source file into the destination.</doc>
+<arguments>
+<arg>viv2test.txt</arg>
+<arg>viv1folder</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.736" html="yes" level="INFO">Moved file from '&lt;a href="file://C:\myrobot\test\viv2test.txt"&gt;C:\myrobot\test\viv2test.txt&lt;/a&gt;' to '&lt;a href="file://C:\myrobot\test\viv1folder\viv2test.txt"&gt;C:\myrobot\test\viv1folder\viv2test.txt&lt;/a&gt;'.</msg>
+<status status="PASS" endtime="20180918 22:44:12.736" starttime="20180918 22:44:12.730"></status>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>viv2folder</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.737" html="yes" level="INFO">Directory '&lt;a href="file://C:\myrobot\test\viv2folder"&gt;C:\myrobot\test\viv2folder&lt;/a&gt;' already exists.</msg>
+<status status="PASS" endtime="20180918 22:44:12.737" starttime="20180918 22:44:12.736"></status>
+</kw>
+<kw name="Directory Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path points to an existing directory.</doc>
+<arguments>
+<arg>viv2folder</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.738" html="yes" level="INFO">Directory '&lt;a href="file://C:\myrobot\test\viv2folder"&gt;C:\myrobot\test\viv2folder&lt;/a&gt;' exists.</msg>
+<status status="PASS" endtime="20180918 22:44:12.738" starttime="20180918 22:44:12.737"></status>
+</kw>
+<kw name="Join Path" library="OperatingSystem">
+<doc>Joins the given path part(s) to the given base path.</doc>
+<arguments>
+<arg>viv1folder</arg>
+<arg>viv2test.txt</arg>
+</arguments>
+<assign>
+<var>${path}</var>
+</assign>
+<msg timestamp="20180918 22:44:12.738" level="INFO">${path} = viv1folder\viv2test.txt</msg>
+<status status="PASS" endtime="20180918 22:44:12.739" starttime="20180918 22:44:12.738"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.739" level="INFO">viv1folder\viv2test.txt</msg>
+<status status="PASS" endtime="20180918 22:44:12.739" starttime="20180918 22:44:12.739"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<status status="PASS" endtime="20180918 22:44:12.740" starttime="20180918 22:44:12.740"></status>
+</kw>
+<kw name="Copy File" library="OperatingSystem">
+<doc>Copies the source file into the destination.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>viv2folder</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.751" html="yes" level="INFO">Copied file from '&lt;a href="file://C:\myrobot\test\viv1folder\viv2test.txt"&gt;C:\myrobot\test\viv1folder\viv2test.txt&lt;/a&gt;' to '&lt;a href="file://C:\myrobot\test\viv2folder\viv2test.txt"&gt;C:\myrobot\test\viv2folder\viv2test.txt&lt;/a&gt;'.</msg>
+<status status="PASS" endtime="20180918 22:44:12.752" starttime="20180918 22:44:12.744"></status>
+</kw>
+<status status="PASS" endtime="20180918 22:44:12.752" critical="yes" starttime="20180918 22:44:12.725"></status>
+</test>
+<test id="s1-t2" name="my test vars">
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>@{testlist}</var>
+</assign>
+<msg timestamp="20180918 22:44:12.757" level="INFO">@{testlist} = [ 2 | 3 | 4 ]</msg>
+<status status="PASS" endtime="20180918 22:44:12.757" starttime="20180918 22:44:12.757"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>@{testlist}[0]</arg>
+</arguments>
+<msg timestamp="20180918 22:44:12.758" level="INFO">2</msg>
+<status status="PASS" endtime="20180918 22:44:12.758" starttime="20180918 22:44:12.758"></status>
+</kw>
+<status status="PASS" endtime="20180918 22:44:12.758" critical="yes" starttime="20180918 22:44:12.755"></status>
+</test>
+<status status="PASS" endtime="20180918 22:44:12.763" starttime="20180918 22:44:12.653"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testrobot" pass="2">Testrobot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
